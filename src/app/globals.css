@@ -45,3 +45,8 @@ body {
   background-position: center;
   background-repeat: repeat-x;
 }
+@media (max-width: 640px) {
+  .pattern {
+      background-size: 100px 100%; /* Adjusts to 100px gap on smaller screens */
+  }
+}

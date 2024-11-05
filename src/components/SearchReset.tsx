@@ -3,17 +3,17 @@ import React from 'react';
 import { X } from 'lucide-react';
 import Link from 'next/link';
 
-export default function SearchReset({query}:{query?:string})  {
+export default function SearchReset()  {
     const reset = () => {
        
     
-        // Select the form with the class 'search-form'
+     
         const form = document.querySelector('.search-form');
     
-        // Check if form is an HTMLFormElement
+       
         if (form instanceof HTMLFormElement) {
-            query = ''
-            form.reset(); // Safe to call reset
+           
+            form.reset(); 
         }
     };
     
