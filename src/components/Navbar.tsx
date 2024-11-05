@@ -1,8 +1,11 @@
 import React from 'react'
+import Form from 'next/form';
+import { auth, signIn, signOut } from "../../auth"
 
-import { signIn } from "../../auth"
+export default async function Navbar() {
 
-export default function Navbar() {
+    const session = await auth()
+
     return (
         <header>
             <nav className='py-4 flex items-center justify-between'>
@@ -10,14 +13,25 @@ export default function Navbar() {
 
                     <img src={"/logo.svg"} alt="Logo" className="size-6" /> StartUps
                 </div>
-                <form
-      action={async () => {
-        "use server"
-        await signIn("github")
-      }}
-    >
-      <button type="submit" className='hover:text-gray-500'>Signin with GitHub</button>
-    </form>
+                {!session ?
+                    <form
+                        action={async () => {
+                            "use server"
+                            await signIn("github")
+                        }}
+                    >
+                        <button type="submit" className='hover:text-gray-500'>Signin with GitHub</button>
+                    </form>
+                    : <form
+                        action={async () => {
+                            "use server"
+                            await signOut()
+                        }}
+                    >
+                        <button type="submit" className='hover:text-gray-500'>Signout</button>
+                    </form>
+                }
+
 
             </nav>
 
