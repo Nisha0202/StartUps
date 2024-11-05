@@ -1,10 +1,13 @@
 import React from 'react'
 import Form from 'next/form';
 import { auth, signIn, signOut } from "../../auth"
+import { LogOut } from 'lucide-react';
+import Link from 'next/link';
 
 export default async function Navbar() {
 
     const session = await auth()
+  
 
     return (
         <header>
@@ -22,14 +25,21 @@ export default async function Navbar() {
                     >
                         <button type="submit" className='hover:text-gray-500'>Signin with GitHub</button>
                     </form>
-                    : <form
-                        action={async () => {
-                            "use server"
-                            await signOut()
-                        }}
-                    >
-                        <button type="submit" className='hover:text-gray-500'>Signout</button>
-                    </form>
+                    : <div className='flex items-center gap-4'>
+                        <Link href={`/user/${session?.user?.id}`}>
+                            Hi {session?.user?.name?.split(' ')[0]}!
+                        </Link>
+
+
+                        <form
+                            action={async () => {
+                                "use server"
+                                await signOut()
+                            }}
+                        >
+                            <button type="submit" className='hover:text-gray-500 flex items-center'><LogOut className='size-4'/></button>
+                        </form>
+                    </div>
                 }
 
 

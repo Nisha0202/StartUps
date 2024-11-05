@@ -25,3 +25,23 @@ body {
 .container{
   @apply max-w-6xl mx-auto px-4
 }
+.hero-bg{
+  @apply pattern min-h-[300px] grid place-content-center;
+}
+.hero-text{
+  background: var(--background);
+  @apply text-center text-3xl font-extrabold
+}
+
+.pattern {
+  background-image: linear-gradient(
+      to right,
+      transparent 49.5%,
+      rgba(171, 171, 171, 0.2) 49.5%, /* Gray color with 20% opacity */
+      rgba(153, 153, 153, 0.6) 50.5%, /* Gray color with 60% opacity */
+      transparent 50.5%
+  );
+  background-size: 130px 100%; /* Sets the pattern gap to 50px (half of 100px) */
+  background-position: center;
+  background-repeat: repeat-x;
+}
