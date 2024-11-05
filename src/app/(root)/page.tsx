@@ -1,8 +1,9 @@
-import Navbar from "@/components/Navbar";
+
 import SearchForm from "@/components/SearchForm";
 
 
-export default function Home() {
+export default async function Home( {searchParams}:{searchParams: Promise<{ query?: string }>}) {
+  const query  = (await searchParams).query;
   return (
     <div className="gap-4 hero-bg">
       <div className="hero-text">
@@ -10,7 +11,7 @@ export default function Home() {
       </div>
        
 
-      <SearchForm />
+      <SearchForm query={query} />
     </div>
   );
 }
