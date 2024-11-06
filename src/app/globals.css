@@ -45,8 +45,17 @@ body {
   background-position: center;
   background-repeat: repeat-x;
 }
+
 @media (max-width: 640px) {
   .pattern {
       background-size: 100px 100%; /* Adjusts to 100px gap on smaller screens */
   }
+}
+
+.card_grid {
+  @apply grid md:grid-cols-3 sm:grid-cols-2 gap-5;
+}
+
+.card_grid-sm {
+  @apply grid sm:grid-cols-2 gap-5;
 }
