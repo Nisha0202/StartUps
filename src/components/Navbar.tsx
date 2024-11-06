@@ -37,7 +37,7 @@ export default async function Navbar() {
                                 await signOut()
                             }}
                         >
-                            <button type="submit" className='hover:text-gray-500 flex items-center' title='Log Out'><LogOut className='size-4'/></button>
+                            <button type="submit" className='hover:text-gray-500 flex items-center' title='Log Out'><LogOut className='size-5'/></button>
                         </form>
                     </div>
                 }

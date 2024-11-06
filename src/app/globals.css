@@ -4,17 +4,17 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --background: #fcfcfc;
   --foreground: #222222;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #faf9f9;
+    --background: #101010;
+    --foreground: #f6f6f6;
   }
-}
+} */
 
 body {
   color: var(--foreground);
@@ -59,3 +59,13 @@ body {
 .card_grid-sm {
   @apply grid sm:grid-cols-2 gap-5;
 }
+
+.bg-toggle{
+  @apply bg-white dark:bg-zinc-900;
+}
+
+/* Custom placeholder color */
+.placeholder-custom-color::placeholder {
+  color: #6B7280; /* Tailwind gray-500 color, adjust as needed */
+}
+
