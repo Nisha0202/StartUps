@@ -8,10 +8,11 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ q
 
   const posts: StartupCardType[] = [
     {
-      _createdAt: "2023-09-12", 
+      _createdAt: new Date(), 
       views: 55,
       author: {
         _id: 11,
+        name: 'John Deo'
       },
       _id: "1", 
       description: "This is a description",
@@ -20,10 +21,11 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ q
       title: "We Robots",
     },
     {
-      _createdAt: "2023-09-13", 
+      _createdAt: new Date(), 
       views: 42,
       author: {
         _id: 12,
+        name: 'Kora Se'
       },
       _id: "2", 
       description: "Exploring the future of robotics.",
@@ -32,10 +34,11 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ q
       title: "The Future of Tech",
     },
     {
-      _createdAt: "2023-09-11", 
+      _createdAt: new Date(), 
       views: 88,
       author: {
-        _id: 13, // Changed id to _id
+        _id: 13, 
+        name: 'Sweo Xu'
       },
       _id: "3", // Changed id to _id and use string type
       description: "A deep dive into AI advancements.",

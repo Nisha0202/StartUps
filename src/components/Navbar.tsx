@@ -1,8 +1,6 @@
 import React from 'react'
-import Form from 'next/form';
 import { auth, signIn, signOut } from "../../auth"
 import { LogOut } from 'lucide-react';
-import Link from 'next/link';
 import Profile from './Profile';
 
 export default async function Navbar() {

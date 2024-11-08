@@ -73,3 +73,21 @@ body {
   color: #6B7280; /* Tailwind gray-500 color, adjust as needed */
 }
 
+.flex-between{
+  @apply flex items-center justify-between
+}
+
+.startup-card{
+  @apply p-6 rounded border-2 border-gray-500
+}
+
+.hover{
+  @apply hover:text-gray-500 hover:border-secondary
+}
+.category_style{
+  @apply border-primary text-primary border-2 px-2 rounded-full bg-blue-50 dark:bg-blue-950
+}
+
+.startup-card_btn{
+  @apply px-2 py-0.5 rounded-full bg-black dark:bg-white text-[#f6f6f6] dark:text-[#222222]
+} 
