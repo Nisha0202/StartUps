@@ -37,7 +37,7 @@ import React from 'react'
 
   return (
     <article className="startup-card group">
-      <div className="flex-between">
+      <div className="flex-between mb-5">
         <p className="startup_card_date">{formatDate(_createdAt)}</p>
         <div className="flex-between gap-2">
           <EyeIcon className="size-4 text-primary" />
@@ -51,7 +51,7 @@ import React from 'react'
             <p className="text-16-medium line-clamp-1">{author?.name}</p>
           </Link>
           <Link href={`/startup/${_id}`}>
-            <h3 className="text-xl font-semibold line-clamp-1">{title}</h3>
+            <h3 className="text-xl font-semibold line-clamp-1 mt-2">{title}</h3>
           </Link>
         </div>
         {/* <Link href={`/user/${author?._id}`}>
@@ -75,7 +75,7 @@ import React from 'react'
         <Link href={`/?query=${category?.toLowerCase()}`} className='min-w-12 text-center'>
           <p className="category_style ">{category}</p>
         </Link>
-        <button className="startup-card_btn  hover:bg-secondary">
+        <button className="startup-card_btn">
           <Link href={`/startup/${_id}`}>Read</Link>
         </button>
       </div>

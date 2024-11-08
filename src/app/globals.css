@@ -53,7 +53,7 @@ body {
 }
 
 .card_grid {
-  @apply grid md:grid-cols-3 sm:grid-cols-2 gap-5;
+  @apply grid md:grid-cols-3 sm:grid-cols-2 gap-6;
 }
 
 .card_grid-sm {
@@ -78,7 +78,7 @@ body {
 }
 
 .startup-card{
-  @apply p-6 rounded border-2 border-gray-500
+  @apply p-8 rounded border-2 border-gray-500
 }
 
 .hover{
@@ -89,5 +89,5 @@ body {
 }
 
 .startup-card_btn{
-  @apply px-2 py-0.5 rounded-full bg-black dark:bg-white text-[#f6f6f6] dark:text-[#222222]
+  @apply px-2 py-0.5 rounded-full bg-black border-2  border-black dark:bg-white dark:border-white hover:border-gray-500 hover:bg-gray-500 text-[#f6f6f6] dark:text-black w-16 text-center
 } 

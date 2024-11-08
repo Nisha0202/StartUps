@@ -57,9 +57,9 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ q
   const query = (await searchParams).query;
   return (
     <div className="">
-      <section className="gap-6 hero-bg">
+      <section className="gap-5 hero-bg relative">
         <div className="hero-text">
-          <span className="border-b-2 border-primary  text-primary">Start</span> and Elevate to New <span className="border-b-2 border-primary text-primary">Ups</span>
+          <span className=" text-primary">Start</span> and Elevate to New <span className=" text-primary">Ups</span>
         </div>
         <SearchForm query={query} />
       </section>
@@ -70,11 +70,11 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ q
 
 
       <section>
-        <div className="text-center mt-12 text-xl font-bold">
+        <div className="text-center mt-12 sm:mt-24 text-xl font-bold">
           {query ? `Startups matches ''${query}''` : 'All Startups'}
         </div>
 
-        <div className="card_grid">
+        <div className="card_grid my-8">
     {posts.length > 0 ? (
       posts.map((post: StartupCardType) => (
         <StartupCard key={post._id} post={post}/>
