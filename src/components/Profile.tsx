@@ -22,7 +22,7 @@ export default function ProfileMenu({ session }: ProfileMenuProps) {
       document.documentElement.classList.remove("light");
       
       // Update CSS variables for dark theme
-      root.style.setProperty('--background', '#242424');
+      root.style.setProperty('--background', '#353839');
       root.style.setProperty('--foreground', '#f6f6f6');
     } else {
       document.documentElement.classList.remove("dark");
@@ -45,7 +45,7 @@ export default function ProfileMenu({ session }: ProfileMenuProps) {
   return (
     <div className="relative">
       <img
-        src={session?.user?.image || "/default-profile.png"}  // Fallback if no image
+        src={session?.user?.image || "/user.svg"}  // Fallback if no image
         alt="Profile Image"
         className="w-9 h-9 rounded-full border-toggle  hover:border-gray-500 object-cover cursor-pointer"
         title={session?.user?.name?.split(' ')[0]}

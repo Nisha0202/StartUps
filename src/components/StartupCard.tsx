@@ -37,32 +37,34 @@ import React from 'react'
 
   return (
     <article className="startup-card group">
-      <div className="flex-between mb-5">
+      <div className="flex-between mb-2">
         <p className="startup_card_date">{formatDate(_createdAt)}</p>
         <div className="flex-between gap-2">
           <EyeIcon className="size-4 text-primary" />
-          <span className="text-16-medium">{views}</span>
+          <span className="">{views}</span>
         </div>
       </div>
 
-      <div className="flex-between">
-        <div className="flex-1">
+      <div className="flex flex-col gap-2">
+        <div className="flex-between">
           <Link href={`/user/${author?._id}`}>
-            <p className="text-16-medium line-clamp-1">{author?.name}</p>
+            <p className="line-clamp-1">{author?.name}</p>
           </Link>
-          <Link href={`/startup/${_id}`}>
-            <h3 className="text-xl font-semibold line-clamp-1 mt-2">{title}</h3>
-          </Link>
-        </div>
-        {/* <Link href={`/user/${author?._id}`}>
+      <Link href={`/user/${author?._id}`}>
           <Image
-            src={author?.image!}
+            // src={author?.image!}
+            src={'/user.svg'}
             alt={author?.name!}
-            width={48}
-            height={48}
+            width={24}
+            height={24}
             className="rounded-full"
           />
-        </Link> */}
+        </Link>
+        </div>
+
+        <Link href={`/startup/${_id}`}>
+            <h3 className="text-xl font-semibold line-clamp-1">{title}</h3>
+          </Link>
       </div>
 
       <Link href={`/startup/${_id}`}>

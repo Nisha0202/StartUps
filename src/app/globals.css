@@ -61,7 +61,7 @@ body {
 }
 
 .bg-toggle{
-  @apply bg-white dark:bg-zinc-800;
+  @apply bg-white dark:bg-[#333333];
 }
 
 .border-toggle{
@@ -78,7 +78,7 @@ body {
 }
 
 .startup-card{
-  @apply p-8 rounded border-2 border-gray-500
+  @apply p-8 rounded border-2 border-gray-500 text-sm
 }
 
 .hover{
