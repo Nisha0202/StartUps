@@ -47,7 +47,7 @@ export default function ProfileMenu({ session }: ProfileMenuProps) {
       <img
         src={session?.user?.image || "/user.svg"}  // Fallback if no image
         alt="Profile Image"
-        className="w-9 h-9 rounded-full border-toggle  hover:border-gray-500 object-cover cursor-pointer"
+        className="w-9 h-9 rounded-full border-[1px] border-toggle  hover:border-gray-500 object-cover cursor-pointer"
         title={session?.user?.name?.split(' ')[0]}
         onClick={() => setOpen(!open)}
       />

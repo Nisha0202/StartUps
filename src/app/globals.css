@@ -65,7 +65,7 @@ body {
 }
 
 .border-toggle{
-  @apply border-2 border-[#222222] dark:border-[#f6f6f6]
+  @apply  border-[#222222] dark:border-[#f6f6f6]
 }
 
 /* Custom placeholder color */
