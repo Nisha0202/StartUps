@@ -20,7 +20,7 @@ import React from 'react'
 
   return (
     <article className="startup-card group">
-      <div className="flex-between mb-2">
+      <div className="flex-between mb-2 text-toggle">
         <p className="startup_card_date">{formatDate(_createdAt)}</p>
         <div className="flex-between gap-2">
           <EyeIcon className="size-4 text-primary" />
@@ -29,7 +29,7 @@ import React from 'react'
       </div>
 
       <div className="flex flex-col gap-2">
-        <div className="flex-between">
+        <div className="flex-between font-bold text-toggle">
           <Link href={`/user/${author?._id}`}>
             <p className="line-clamp-1">{author?.name}</p>
           </Link>
@@ -46,14 +46,14 @@ import React from 'react'
         </div>
 
         <Link href={`/startup/${_id}`}>
-            <h3 className="text-xl font-semibold line-clamp-1">{title}</h3>
+            <h3 className="text-xl font-bold line-clamp-1 ">{title}</h3>
           </Link>
       </div>
 
       <Link href={`/startup/${_id}`}>
-        <p className="startup-card_desc">{description}</p>
+        <p className="startup-card_desc text-toggle h-5 overflow-hidden mb-5">{description}</p>
 
-        <img src={image} alt="placeholder" className="startup-card_img rounded my-5" />
+        <img src={image} alt="placeholder" className="startup-card_img rounded mb-6" />
       </Link>
 
       <div className="flex-between">

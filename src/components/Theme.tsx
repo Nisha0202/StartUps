@@ -24,7 +24,7 @@ export default function Theme() {
           document.documentElement.classList.add("light");
     
           // Update CSS variables for light theme
-          root.style.setProperty('--background', '#fcfcfc');
+          root.style.setProperty('--background', '#f7f7f7');
           root.style.setProperty('--foreground', '#222222');
         }
     

@@ -18,31 +18,33 @@ export default async function Navbar() {
                 </div>
                 <div className='flex items-center gap-3'>
 
-                    {!session ?  <div className='flex items-center gap-3'>
-                        <Theme/>
-                         <form
+                    {!session ? <div className='flex items-center gap-3'>
+                        <Theme />
+                        <form
                             action={async () => {
                                 "use server"
                                 await signIn("github")
                             }}
                         >
-                            <button type="submit" className='hover:text-gray-500'>Signin with GitHub</button>
+                            <button type="submit"
+                                className='flex items-center gap-2 w-full px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700 rounded
+          hover:text-gray-500'>Signin with GitHub</button>
                         </form>
-                        </div> : <div className='flex items-center gap-3'>
-                            <Profile session={session} />
+                    </div> : <div className='flex items-center gap-3'>
+                        <Profile session={session} />
 
-                            <form
-                                action={async () => {
-                                    "use server"
-                                    await signOut()
-                                }}
-                            >
-                                <button type="submit"
-                                    className="flex items-center hover:text-gray-500"
-                                    title='Log Out'><LogOut className='size-5' /></button>
-                            </form> 
+                        <form
+                            action={async () => {
+                                "use server"
+                                await signOut()
+                            }}
+                        >
+                            <button type="submit"
+                                className="flex items-center hover:text-gray-500"
+                                title='Log Out'><LogOut className='size-5' /></button>
+                        </form>
 
-                        </div>
+                    </div>
                     }
 
 

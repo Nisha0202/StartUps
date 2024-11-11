@@ -4,17 +4,17 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --background: #fcfcfc;
+:root {
+  --background: #f7f7f7;
   --foreground: #222222;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #202020;
-    --foreground: #f6f6f6;
+    --foreground: #d0d0d0;
   }
-} */
+}
 
 body {
   color: var(--foreground);
@@ -41,7 +41,7 @@ body {
       rgba(153, 153, 153, 0.6) 50.5%, /* Gray color with 60% opacity */
       transparent 50.5%
   );
-  background-size: 130px 100%; /* Sets the pattern gap to 50px (half of 100px) */
+  background-size: 130px 100%; 
   background-position: center;
   background-repeat: repeat-x;
 }
@@ -68,6 +68,9 @@ body {
   @apply  border-[#222222] dark:border-[#f6f6f6]
 }
 
+.text-toggle{
+  @apply text-gray-600 dark:text-[#b9b9b9]
+}
 /* Custom placeholder color */
 .placeholder-custom-color::placeholder {
   color: #6B7280; /* Tailwind gray-500 color, adjust as needed */
@@ -89,5 +92,5 @@ body {
 }
 
 .startup-card_btn{
-  @apply px-2 py-0.5 rounded-full bg-black border-2  border-black dark:bg-white dark:border-white hover:border-gray-500 hover:bg-gray-500 text-[#f6f6f6] dark:text-black w-16 text-center
+  @apply px-2 py-[1.84px] rounded-full bg-black border-2  border-black dark:bg-white dark:border-white hover:border-gray-500 hover:bg-gray-500 text-[#f6f6f6] dark:text-black w-16 text-center
 } 
