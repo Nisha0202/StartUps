@@ -9,22 +9,85 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement()) // Unique identifier for the user
-  name      String   @db.VarChar(255)              // User's name
-  image     String?  // Optional URL for the user's image
-  githubId  String   @unique                      // GitHub ID to uniquely identify the user
-  posts     StartupPost[] // Relation to the posts authored by the user
+  id            String          @id @default(cuid())
+  name          String?                           // Optional name field
+  email         String          @unique           // Unique email
+  emailVerified DateTime?
+  image         String?                           // Optional image URL
+  accounts      Account[]                         // One-to-many relationship with Account
+  sessions      Session[]                         // One-to-many relationship with Session
+  Authenticator Authenticator[]                   // Optional for WebAuthn support
+  createdAt     DateTime        @default(now())   // Auto set on creation
+  updatedAt     DateTime        @updatedAt        // Auto updated on update
+  StartupPost   StartupPost[]                     // One-to-many relationship with StartupPost
+}
+
+model Account {
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([provider, providerAccountId])
+}
+
+model Session {
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model VerificationToken {
+  identifier String
+  token      String
+  expires    DateTime
+
+  @@id([identifier, token])
+}
+
+// Optional for WebAuthn support
+model Authenticator {
+  credentialID         String  @unique
+  userId               String
+  providerAccountId    String
+  credentialPublicKey  String
+  counter              Int
+  credentialDeviceType String
+  credentialBackedUp   Boolean
+  transports           String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, credentialID])
 }
 
 model StartupPost {
-  id          String   @id @default(uuid()) // Unique identifier for each post
-  createdAt   DateTime @default(now())      // Timestamp for when the post was created
-  views       Int      @default(0)          // Number of views for the post
-  description String                         // Description of the post
-  image       String                         // URL of the image associated with the post
-  category    String                         // Category of the post
-  title       String                         // Title of the post
-  author      User     @relation(fields: [authorId], references: [id])
-  authorId    Int                             // Foreign key relation to User
+  id          String   @id @default(uuid())       // Unique identifier for each post
+  createdAt   DateTime @default(now())            // Auto set on creation
+  views       Int      @default(0)                // Default to 0 views
+  description String                             // Description of the post
+  image       String                             // URL of the image associated with the post
+  category    String                             // Category of the post
+  title       String                             // Title of the post
+  author      User     @relation(fields: [authorId], references: [id]) // Relation to User model
+  authorId    String                             // Foreign key for User relation
 }
+
+
 
