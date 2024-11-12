@@ -1,7 +1,9 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import { Session } from 'next-auth';
-import { PencilLine, Moon, Sun } from 'lucide-react';
+import { PencilLine, Moon, Sun, LogOut } from 'lucide-react';
+import { signOut } from 'next-auth/react';
+
 
 interface ProfileMenuProps {
   session: Session;
@@ -78,6 +80,14 @@ export default function ProfileMenu({ session }: ProfileMenuProps) {
               <Moon className="w-5 h-5   pointer-events-none" />
             )}
             Theme
+          </button>
+
+          <button
+            onClick={()=>signOut()}
+            className="flex items-center gap-2 w-full px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700 rounded"
+          >
+          
+          <LogOut className='size-5' /> Logout
           </button>
         </div>
       )}

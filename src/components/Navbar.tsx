@@ -30,10 +30,10 @@ export default async function Navbar() {
                     className='flex items-center gap-2 w-full px-3 py-1.5 text-sm action_btn font-medium
                      rounded  '>Signin with GitHub</button>
                         </form>
-                    </div> : <div className='flex items-center gap-3'>
+                    </div> : <div className='flex items-center '>
                         <Profile session={session} />
 
-                        <form
+                        {/* <form
                             action={async () => {
                                 "use server"
                                 await signOut()
@@ -42,7 +42,7 @@ export default async function Navbar() {
                             <button type="submit"
                                 className="flex items-center hover:text-gray-500"
                                 title='Log Out'><LogOut className='size-5' /></button>
-                        </form>
+                        </form> */}
 
                     </div>
                     }
