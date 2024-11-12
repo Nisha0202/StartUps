@@ -26,9 +26,9 @@ export default async function Navbar() {
                                 await signIn("github")
                             }}
                         >
-                            <button type="submit"
-                                className='flex items-center gap-2 w-full px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700 rounded
-          hover:text-gray-500'>Signin with GitHub</button>
+                <button type="submit"
+                    className='flex items-center gap-2 w-full px-3 py-1.5 text-sm action_btn font-medium
+                     rounded  '>Signin with GitHub</button>
                         </form>
                     </div> : <div className='flex items-center gap-3'>
                         <Profile session={session} />

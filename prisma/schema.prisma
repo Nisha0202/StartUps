@@ -1,0 +1,30 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement()) // Unique identifier for the user
+  name      String   @db.VarChar(255)              // User's name
+  image     String?  // Optional URL for the user's image
+  githubId  String   @unique                      // GitHub ID to uniquely identify the user
+  posts     StartupPost[] // Relation to the posts authored by the user
+}
+
+model StartupPost {
+  id          String   @id @default(uuid()) // Unique identifier for each post
+  createdAt   DateTime @default(now())      // Timestamp for when the post was created
+  views       Int      @default(0)          // Number of views for the post
+  description String                         // Description of the post
+  image       String                         // URL of the image associated with the post
+  category    String                         // Category of the post
+  title       String                         // Title of the post
+  author      User     @relation(fields: [authorId], references: [id])
+  authorId    Int                             // Foreign key relation to User
+}
+

@@ -4,7 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --background: #f7f7f7;
   --foreground: #222222;
 }
@@ -14,7 +14,7 @@
     --background: #202020;
     --foreground: #d0d0d0;
   }
-}
+} */
 
 body {
   color: var(--foreground);
@@ -94,3 +94,6 @@ body {
 .startup-card_btn{
   @apply px-2 py-[1.84px] rounded-full bg-black border-2  border-black dark:bg-white dark:border-white hover:border-gray-500 hover:bg-gray-500 text-[#f6f6f6] dark:text-black w-16 text-center
 } 
+.action_btn{
+  @apply bg-black border-2  border-black dark:bg-white dark:border-white hover:border-gray-500 hover:bg-gray-500 text-[#f6f6f6] dark:text-black  text-center
+}
