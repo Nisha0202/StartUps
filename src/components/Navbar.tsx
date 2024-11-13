@@ -12,8 +12,7 @@ export default async function Navbar() {
     return (
         <header>
             <nav className='py-4 flex-between'>
-                <div className="logo flex items-center gap-1 font-bold text-lg">
-
+                <div className="logo flex items-center gap-1 font-bold">
                     <img src={"/logo.svg"} alt="Logo" className="size-6" /> StartUps
                 </div>
                 <div className='flex items-center gap-3'>
