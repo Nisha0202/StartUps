@@ -27,7 +27,7 @@ export default async function Navbar() {
                         >
                 <button type="submit"
                     className='flex items-center gap-2 w-full px-3 py-1.5 text-sm action_btn font-medium
-                     rounded  '>Signin with GitHub</button>
+                     rounded  '>Signin with GitHub <image/></button>
                         </form>
                     </div> : <div className='flex items-center '>
                         <Profile session={session} />
