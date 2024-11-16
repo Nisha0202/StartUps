@@ -4,17 +4,15 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --background: #f7f7f7;
-  --foreground: #222222;
+
+:root {
+  
+ --icon-color: #fff; /* Dark mode color */}
+
+[data-theme="dark"] {
+ --icon-color: #000; /* Default (light mode) color */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #202020;
-    --foreground: #d0d0d0;
-  }
-} */
 
 body {
   color: var(--foreground);

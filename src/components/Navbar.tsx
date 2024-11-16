@@ -2,6 +2,7 @@ import React from 'react'
 import { auth, signIn } from "../../auth"
 import Profile from './Profile';
 import Theme from './Theme';
+import { Github } from 'lucide-react';
 
 export default async function Navbar() {
 
@@ -26,7 +27,7 @@ export default async function Navbar() {
                         >
                 <button type="submit"
                     className='flex items-center gap-2 w-full px-3 py-1.5 text-sm action_btn font-medium
-                     rounded  '>Signin with GitHub <img src={"/github.svg"} alt="Logo" className="size-6" /> </button>
+                     rounded'><Github className="size-4 text-white dark:text-black"  /> Signin with GitHub</button>
                         </form>
                     </div> : <div className='flex items-center '>
                         <Profile session={session} />
