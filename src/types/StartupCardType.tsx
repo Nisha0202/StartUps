@@ -1,5 +1,5 @@
 
-  interface Author {
+export interface Author {
     _id: number;
     name: string;
     image?: string;
