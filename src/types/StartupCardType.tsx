@@ -3,6 +3,7 @@
     _id: number;
     name: string;
     image?: string;
+    githubId?: string,
   }
 
  export interface StartupCardType {
