@@ -1,12 +1,12 @@
-export default function formatDate(date: Date): string {
+export default function formatDate(date: string | Date): string {
     const options: Intl.DateTimeFormatOptions = {
         day: "numeric",
         month: "long",
         year: "numeric",
     };
-    return new Intl.DateTimeFormat("en-GB", options).format(date);
-}
 
-// // Example usage
-// const date = new Date();  // Use the current date
-// console.log(formatDate(date));  // Output example: "14 October 2024"
+    // Ensure the input is a Date object
+    const parsedDate = typeof date === "string" ? new Date(date) : date;
+
+    return new Intl.DateTimeFormat("en-GB", options).format(parsedDate);
+}

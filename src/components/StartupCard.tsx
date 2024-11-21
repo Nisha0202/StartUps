@@ -8,7 +8,7 @@ import React from 'react'
 
  const StartupCard = ({ post }: { post: StartupCardType }) => {
   const {
-    _createdAt,
+    createdAt,
     views,
     author,
     title,
@@ -21,7 +21,7 @@ import React from 'react'
   return (
     <article className="startup-card group">
       <div className="flex-between mb-2 text-toggle">
-        <p className="startup_card_date">{formatDate(_createdAt)}</p>
+        <p className="startup_card_date">{formatDate(createdAt)}</p>
         <div className="flex-between gap-2">
           <EyeIcon className="size-4 text-primary" />
           <span className="">{views}</span>

@@ -1,0 +1,48 @@
+[
+    {
+      "_id": "post1", 
+      "createdAt": "2024-10-11T21:08:23.501+00:00",
+      "views": 125,
+      "author": {
+        "_id": "1",
+        "name": "Alice Johnson",
+        "image": "https://i.pinimg.com/enabled_lo_mid/736x/02/e7/49/02e749ac2486c8c3fbe901d0a1fbf16a.jpg",
+        "email": "nishajabatunnessa@gmail.com"
+      },
+      "description": "A platform connecting students with mentors to guide their career paths.",
+      "image": "https://i.pinimg.com/enabled_lo_mid/736x/02/e7/49/02e749ac2486c8c3fbe901d0a1fbf16a.jpg",
+      "category": "Education",
+      "title": "MentorConnect"
+    },
+    {
+      "_id": "post2",
+      "createdAt": "2024-10-11T21:08:23.501+00:00",
+      "views": 250,
+      "author": {
+        "_id": "2",
+        "name": "Bob Smith",
+        "image": "https://i.pinimg.com/enabled_lo_mid/736x/02/e7/49/02e749ac2486c8c3fbe901d0a1fbf16a.jpg",
+        "email": "nishajabatunnessa@gmail.com"
+      },
+      "description": "An app that provides AI-generated nutritional advice based on user inputs.",
+      "image": "https://i.pinimg.com/enabled_lo_mid/736x/02/e7/49/02e749ac2486c8c3fbe901d0a1fbf16a.jpg",
+      "category": "Health",
+      "title": "NutriAI"
+    },
+    {
+      "_id": "post3",
+      "createdAt": "2024-10-11T21:08:23.501+00:00",
+      "views": 340,
+      "author": {
+        "_id": "3",
+        "name": "Clara Lee",
+        "image": "https://i.pinimg.com/enabled_lo_mid/736x/02/e7/49/02e749ac2486c8c3fbe901d0a1fbf16a.jpg",
+        "email": "nishajabatunnessa@gmail.com"
+      },
+      "description": "A platform for sharing and discovering eco-friendly home solutions.",
+      "image": "https://i.pinimg.com/enabled_lo_mid/736x/02/e7/49/02e749ac2486c8c3fbe901d0a1fbf16a.jpg",
+      "category": "Sustainability",
+      "title": "GreenHaven"
+    }
+  ]
+  

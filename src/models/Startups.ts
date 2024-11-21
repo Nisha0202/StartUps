@@ -3,15 +3,15 @@ import { StartupCardType, Author } from '@/types/StartupCardType'; // Import Aut
 
 // Create the Author schema
 const AuthorSchema = new Schema<Author>({
-    _id: { type: Number, required: true }, // Change to String if using ObjectId
+    _id: { type: String, required: true }, // Change to String if using ObjectId
     name: { type: String, required: true },
     image: { type: String, required: false },
-    githubId: { type: String, required: false },
+    email:{type: String, required: true}
   });
 
 // Create the StartupCardType schema
 const StartupCardSchema = new Schema<StartupCardType>({
-  _createdAt: { type: Date, default: Date.now },
+  createdAt: { type: Date, default: Date.now },
   views: { type: Number, default: 0 },
   author: { type: AuthorSchema, required: true },
   description: { type: String, required: true },

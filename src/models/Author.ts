@@ -2,19 +2,20 @@ import mongoose, {  Schema } from 'mongoose';
 
 // Define the Author interface
 interface Author {
-  _id: number; // You might want to change this to string if using ObjectId
+  _id: string; 
   name: string;
   image?: string;
-  githubId?: string;
+  email: string;
+  
 }
 
 
 // Create the Author schema
 const AuthorSchema = new Schema<Author>({
-  _id: { type: Number, required: true }, // Change to String if using ObjectId
+  _id: { type: String, required: true }, // Change to String if using ObjectId
   name: { type: String, required: true },
   image: { type: String, required: false },
-  githubId: { type: String, required: false },
+  email: { type: String, required: true },
 });
 
 
