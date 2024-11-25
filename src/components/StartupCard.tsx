@@ -51,7 +51,7 @@ import React from 'react'
       </div>
 
       <Link href={`/startup/${_id}`}>
-        <p className="startup-card_desc text-toggle h-5 overflow-hidden mb-5">{description}</p>
+        <p className="startup-card_desc text-toggle mt-1 mb-5">{description}</p>
 
         <img src={image} alt="placeholder" className="startup-card_img rounded mb-6" />
       </Link>

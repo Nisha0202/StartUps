@@ -99,3 +99,10 @@ body {
 .startup-card_img{
   @apply h-56 w-full object-cover
 }
+.startup-card_desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; 
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

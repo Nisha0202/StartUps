@@ -6,20 +6,13 @@ import startups from "../../../public/startups.json";
 
 export default async function Home({ searchParams }: { searchParams: Promise<{ query?: string }> }) {
 
-  const posts: StartupCardType[] = startups;
+  // const posts: StartupCardType[] = startups;
+  let data = await fetch('http://localhost:3000/api/get-ideas')
+  let posts = await data.json()
   // let posts: StartupCardType[] = [];
-  // try {
-  //   const response = await fetch("startups");
-  //   if (!response.ok) throw new Error("Failed to fetch data");
-  //   posts = await response.json();
-  // } catch (error) {
-  //   console.error(error);
-  //   posts = [];
-  // }
   
-
-
   const query = (await searchParams).query;
+
   return (
 
     <div className="">
