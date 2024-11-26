@@ -1,30 +1,44 @@
 import { NextRequest } from "next/server";
 import { dbConnect } from "../../../../db";
 import Startups from "../../../models/Startups";
-import { NextResponse } from "next/server";
 
-export async function GET() {
+export async function GET(request:NextRequest) {
   await dbConnect();
 
-
   try {
-    // Fetch all startups
-    const startups = await Startups.find({}).lean(); 
-    // Check if there are any startups
+    // Extract query parameter from the request URL
+    const { searchParams } = new URL(request.url);
+    const query = searchParams.get("query"); // Get 'query' parameter
+
+    // Define a filter based on the query
+    const filter = query
+      ? {
+          $or: [
+            { title: { $regex: query, $options: "i" } }, // Match 'title'
+            { description: { $regex: query, $options: "i" } }, // Match 'description'
+          ],
+        }
+      : {}; // If no query, fetch all startups
+
+    // Fetch startups based on the filter
+    const startups = await Startups.find(filter).lean();
+
+    // Check if startups are found
     if (!startups || startups.length === 0) {
       return new Response(
         JSON.stringify({
           success: false,
-          message: "No startups found.",
+          message: query ? "No startups match your query." : "No startups found.",
         }),
         { status: 404 }
       );
     }
 
+    // Return the filtered or all startups
     return new Response(
       JSON.stringify({
         success: true,
-        startups, // Returning the fetched startups
+        startups,
       }),
       { status: 200 }
     );

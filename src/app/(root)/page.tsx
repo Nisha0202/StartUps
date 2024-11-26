@@ -2,28 +2,32 @@
 import SearchForm from "@/components/SearchForm";
 import StartupCard from "@/components/StartupCard";
 import { StartupCardType } from "@/types/StartupCardType";
-import startups from "../../../public/startups.json";
 
 export default async function Home({ searchParams }: { searchParams: Promise<{ query?: string }> }) {
 
   let posts: StartupCardType[] = [];
 
-  try {
-    const response = await fetch("http://localhost:3000/api/get-ideas", {
-      cache: "no-store", // Disable caching for dynamic data
-    });
+  const query = (await searchParams).query;
 
+  try {
+    const response = await fetch(
+      query
+        ? `http://localhost:3000/api/get-ideas?query=${encodeURIComponent(query)}`
+        : "http://localhost:3000/api/get-ideas",
+      { cache: "no-store" } // Disable caching
+    );
+  
     if (!response.ok) {
       throw new Error(`Failed to fetch ideas: ${response.statusText}`);
     }
-
+  
     const data = await response.json();
     posts = data.startups || []; // Access the startups array
   } catch (error) {
     console.error("Error fetching posts:", error);
+    posts = []; // Fallback to an empty array
   }
   
-  const query = (await searchParams).query;
 
   return (
 
