@@ -1,6 +1,6 @@
 [
     {
-      "_id": "post1", 
+   
       "createdAt": "2024-10-11T21:08:23.501+00:00",
       "views": 125,
       "author": {
@@ -15,7 +15,7 @@
       "title": "MentorConnect"
     },
     {
-      "_id": "post2",
+    
       "createdAt": "2024-10-11T21:08:23.501+00:00",
       "views": 250,
       "author": {
@@ -30,7 +30,7 @@
       "title": "NutriAI"
     },
     {
-      "_id": "post3",
+      
       "createdAt": "2024-10-11T21:08:23.501+00:00",
       "views": 340,
       "author": {

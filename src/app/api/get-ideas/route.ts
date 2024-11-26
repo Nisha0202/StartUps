@@ -1,21 +1,11 @@
+import { NextRequest } from "next/server";
 import { dbConnect } from "../../../../db";
 import Startups from "../../../models/Startups";
-import { auth } from "../../../../auth";
+import { NextResponse } from "next/server";
 
 export async function GET() {
   await dbConnect();
-  const session = await auth();
 
-  // Check for authentication
-  if (!session || !session.user) {
-    return new Response(
-      JSON.stringify({
-        success: false,
-        message: "Not Authenticated.",
-      }),
-      { status: 401 }
-    );
-  }
 
   try {
     // Fetch all startups

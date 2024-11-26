@@ -6,10 +6,22 @@ import startups from "../../../public/startups.json";
 
 export default async function Home({ searchParams }: { searchParams: Promise<{ query?: string }> }) {
 
-  // const posts: StartupCardType[] = startups;
-  let data = await fetch('http://localhost:3000/api/get-ideas')
-  let posts = await data.json()
-  // let posts: StartupCardType[] = [];
+  let posts: StartupCardType[] = [];
+
+  try {
+    const response = await fetch("http://localhost:3000/api/get-ideas", {
+      cache: "no-store", // Disable caching for dynamic data
+    });
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch ideas: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    posts = data.startups || []; // Access the startups array
+  } catch (error) {
+    console.error("Error fetching posts:", error);
+  }
   
   const query = (await searchParams).query;
 
@@ -38,9 +50,6 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ q
             <div>No Posts.</div>
           )}
         </div>
-
-
-
 
       </section>
 
