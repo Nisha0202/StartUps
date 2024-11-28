@@ -21,6 +21,6 @@ const StartupCardSchema = new Schema<StartupCardType>({
 });
 
 // Create the model
-const Startups = mongoose.models.StartupCard || mongoose.model<StartupCardType>('Startups', StartupCardSchema);
-
+//const Startups = mongoose.models.StartupCard || mongoose.model<StartupCardType>('Startups', StartupCardSchema);
+const Startups = mongoose.models.Startups || mongoose.model('Startups', StartupCardSchema);
 export default Startups;
